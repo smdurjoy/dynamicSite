@@ -4,7 +4,9 @@ import Footer from "../components/Footer/Footer";
 import CourseDetails from "../components/CourseDetails/CourseDetails";
 
 class CourseDetailsPage extends Component {
-  
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render() {
         return (
             <Fragment>

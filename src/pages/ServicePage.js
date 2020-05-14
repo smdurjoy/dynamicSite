@@ -6,7 +6,9 @@ import ContactSection from "../components/ContactSection/ContactSection";
 import Footer from "../components/Footer/Footer";
 
 class ServicePage extends Component {
-  
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render() {
         return (
             <Fragment>
