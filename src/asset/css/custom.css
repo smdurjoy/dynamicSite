@@ -344,7 +344,6 @@ width: 100%;
     font-weight: 400;
 }
 
-
 .pageTitle{
     font-family: 'Raleway',sans-serif;
     font-weight: 600;
@@ -359,9 +358,8 @@ width: 100%;
 }
 
 .link-style{
-color: white !important;
-text-decoration: none!important;
-
+    color: white !important;
+    text-decoration: none!important;
 }
 
 .link-style:hover{

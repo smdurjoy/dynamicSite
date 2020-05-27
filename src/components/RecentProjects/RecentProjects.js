@@ -23,15 +23,17 @@ class RecentProjects extends Component {
     render() {
         const myList = this.state.myData;
         const myView = myList.map(data => {
-            return  <Card className="projectCard">
-                <Card.Img variant="top" src={data.image_one} className="cardImage"/>
-                <Card.Body>
-                    <Card.Title className="projectCardTitle">{data.project_name}</Card.Title>
-                    <Card.Text className="projectCardDes">{data.short_description}</Card.Text>
-                    <Button variant="primary"><Link className="link-style" to="/ProjectDetails">Details</Link></Button>
-                </Card.Body>
-            </Card>
-        })
+            return   <Col lg={4} md={6} sm={12}>
+                <Card className="projectCard">
+                    <Card.Img variant="top" src={data.image_one} className="cardImage"/>
+                    <Card.Body>
+                        <Card.Title className="projectCardTitle">{data.project_name}</Card.Title>
+                        <Card.Text className="projectCardDes">{data.short_description}</Card.Text>
+                        <Button variant="primary"><Link className="link-style" to="/ProjectDetails">Details</Link></Button>
+                    </Card.Body>
+                </Card>
+            </Col>
+        });
         return (
             <Fragment>
                 <Container className="text-center">
