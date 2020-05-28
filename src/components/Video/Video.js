@@ -4,17 +4,29 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlayCircle} from "@fortawesome/free-solid-svg-icons";
 import "video-react/dist/video-react.css"
 import {Player,BigPlayButton} from 'video-react'
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
 class Video extends Component {
 
     constructor(){
         super();
         this.state={
-            show:false
+            show:false,
+            videoDescription: '',
+            videoUrl: ''
         }
     }
 
     modalClose=()=>this.setState({show:false})
     modalOpen=()=>this.setState({show:true})
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.VideoHome).then(result => {
+            this.setState({videoDescription:result[0]['video_description'],                                                          videoUrl:result[0]['video_url']})
+        }).catch(error => {
+
+        })
+    }
 
     render() {
         return (
@@ -24,7 +36,7 @@ class Video extends Component {
                         <Col lg={12} md={12} sm={12} className="videoCard">
                             <div>
                                 <p className="videoTitle">How I Do</p>
-                                <p className="videoDes">First i analysis the requirement of project. According to the requirement i make a proper technical analysis, then i build a software architecture. According to the planning i start coding. Testing is also going on with coding. Final testing take place after finishing coding part. After successful implementation i provide 6 month free bug fixing service for corresponding project.</p>
+                                <p className="videoDes">{this.state.videoDescription}</p>
                                 <p><FontAwesomeIcon onClick={this.modalOpen} className="playBtn" icon={faPlayCircle} /></p>
                             </div>
                         </Col>
@@ -34,7 +46,7 @@ class Video extends Component {
                 <Modal size="lg" show={this.state.show} onHide={this.modalClose}>
                     <Modal.Body>
                         <Player>
-                            <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+                            <source src={this.state.videoUrl} />
                             <BigPlayButton position="center"/>
                         </Player>
 

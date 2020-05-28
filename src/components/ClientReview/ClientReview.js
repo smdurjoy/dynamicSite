@@ -3,8 +3,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import {Col, Container, Row} from "react-bootstrap";
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
 
 class ClientReview extends Component {
+    constructor() {
+        super();
+        this.state = {
+            myData: []
+        }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.ClientReview).then(result => {
+            this.setState({myData:result})
+        }).catch(error => {
+
+        })
+    }
+
     render() {
         var settings = {
             autoplaySpeed:3000,
@@ -44,30 +61,26 @@ class ClientReview extends Component {
             ]
         };
 
+        const myList = this.state.myData;
+        const myView = myList.map(data => {
+            return  <div>
+                <Row className="text-center justify-content-center">
+                    <Col lg={6} md={6} sm={12}>
+                        <img className="circleImg" src={data.client_image}/>
+                        <h1 className="serviceName">{data.client_name}</h1>
+                        <p className="serviceDescription" >{data.client_comment}</p>
+                    </Col>
+                </Row>
+            </div>
+        })
+
         return (
             <Fragment>
 
                 <Container className="text-center">
                     <h1 className="serviceMainTitle">CLIENT SAYS</h1>
                     <Slider {...settings}>
-                        <div>
-                            <Row className="text-center justify-content-center">
-                                <Col lg={6} md={6} sm={12}>
-                                    <img className="circleImg" src="https://images.unsplash.com/photo-1522794172501-bddb216175fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
-                                    <h1 className="serviceName">Saqlain Mustaq</h1>
-                                    <p className="serviceDescription" >irst i analysis the requirement of project. According to the requirement i make a proper technical analysis, then i build a software architecture. According to the planning i start coding</p>
-                                </Col>
-                            </Row>
-                        </div>
-                        <div>
-                            <Row className="text-center justify-content-center">
-                                <Col lg={6} md={6} sm={12}>
-                                    <img className="circleImg" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
-                                    <h1 className="serviceName">Durjoy Ruddro</h1>
-                                    <p className="serviceDescription">irst i analysis the requirement of project. According to the requirement i make a proper technical analysis, then i build a software architecture. According to the planning i start coding</p>
-                                </Col>
-                            </Row>
-                        </div>
+                        {myView}
                     </Slider>
                 </Container>
             </Fragment>

@@ -4,8 +4,35 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faPhone, faPlayCircle} from "@fortawesome/free-solid-svg-icons";
 import {faFacebook,faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {Link, NavLink} from "react-router-dom";
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
 
 class Footer extends Component {
+    constructor() {
+        super();
+        this.state = {
+            address: '',
+            email: '',
+            phone: '',
+            facebook: '',
+            youtube: '',
+            footerCredit: ''
+        }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.Footer).then(result => {
+            this.setState({
+                address:result[0]['address'],
+                email: result[0]['email'],
+                phone: result[0]['phone'],
+                facebook: result[0]['facebook'],
+                youtube: result[0]['youtube'],
+                footerCredit: result[0]['footer_credit']
+            })
+        })
+    }
+
     render() {
         return (
             <Fragment>
@@ -13,14 +40,14 @@ class Footer extends Component {
                     <Row>
                         <Col lg={3} md={6} sm={12} className="p-5 text-justify">
                             <h1 className="serviceName">Follow Me</h1>
-                            <a className="socialLink" target={null} href="www.facebook.com"><FontAwesomeIcon  icon={faFacebook} /> Facebook</a><br/>
-                            <a className="socialLink" href="#"><FontAwesomeIcon  icon={faYoutube} /> YouTube</a>
+                            <a className="socialLink" target={null} href={this.state.facebook}><FontAwesomeIcon  icon={faFacebook} /> Facebook</a><br/>
+                            <a className="socialLink" href={this.state.youtube}><FontAwesomeIcon  icon={faYoutube} /> YouTube</a>
                         </Col>
                         <Col lg={3} md={6} sm={12} className="p-5 text-justify">
                             <h1 className="serviceName">Address</h1>
-                            <p className="serviceDescription"> East Guptopara, Rangpur</p>
-                            <p className="serviceDescription" > <FontAwesomeIcon  icon={faEnvelope} /> smdurjoy.cse@gmail.com</p>
-                            <p className="serviceDescription" > <FontAwesomeIcon  icon={faPhone} /> +8801784996428</p>
+                            <p className="serviceDescription"> {this.state.address} </p>
+                            <p className="serviceDescription" > <FontAwesomeIcon  icon={faEnvelope} /> {this.state.email} </p>
+                            <p className="serviceDescription" > <FontAwesomeIcon  icon={faPhone} /> {this.state.phone} </p>
                         </Col>
                         <Col lg={3} md={6} sm={12} className="p-5 text-justify">
                             <h1 className="serviceName">Information</h1>
@@ -37,7 +64,7 @@ class Footer extends Component {
                 </Container>
 
                 <Container fluid={true} className="text-center copyrightSection">
-                    <a className="copyrightLink" href="https://smdurjoy.netlify.app">smdurjoy &copy; 2020-2021</a>
+                    <a className="copyrightLink" href="https://smdurjoy.netlify.app"> {this.state.footerCredit} </a>
                 </Container>
 
             </Fragment>
