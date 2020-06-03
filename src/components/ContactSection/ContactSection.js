@@ -25,6 +25,20 @@ class ContactSection extends Component {
         })
     }
 
+    sendContact(){
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+
+        let jsonObject={name:name, email:email, message:message};
+
+        RestClient.PostRequest(AppUrl.ContactSend,JSON.stringify(jsonObject)).then(result => {
+            alert(result);
+        }).catch(error => {
+            alert("Error");
+        })
+    }
+
     render() {
         return (
             <Fragment>
@@ -36,21 +50,21 @@ class ContactSection extends Component {
                             <Form>
                                 <Form.Group>
                                     <Form.Label className="serviceDescription" >Name</Form.Label>
-                                    <Form.Control type="text" />
+                                    <Form.Control id="name" type="text" />
                                 </Form.Group>
 
                                 <Form.Group>
                                     <Form.Label className="serviceDescription" >Email Address</Form.Label>
-                                    <Form.Control type="email" />
+                                    <Form.Control id="email" type="email" />
                                 </Form.Group>
 
                                 <Form.Group>
                                     <Form.Label className="serviceDescription" >Message</Form.Label>
-                                    <Form.Control  as="textarea" rows="3" />
+                                    <Form.Control id="message" as="textarea" rows="3" />
                                 </Form.Group>
 
 
-                                <Button variant="primary" type="submit">
+                                <Button variant="primary" onClick={this.sendContact}>
                                     Submit
                                 </Button>
                             </Form>
