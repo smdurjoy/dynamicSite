@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d6cfe2bd-a681-4887-bbe9-76f4686f6512" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RestAPI/AppUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/RestAPI/AppUrl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RestAPI/RestClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/RestAPI/RestClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllCourses/AllCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllCourses/AllCourses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllProjects/AllProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllProjects/AllProjects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseDetails/CourseDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseDetails/CourseDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/Courses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ProjectDetails/ProjectDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectDetails/ProjectDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RecentProjects/RecentProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RecentProjects/RecentProjects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CourseDetailsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CourseDetailsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ProjectDetailsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProjectDetailsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/AppRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/AppRoute.js" afterDir="false" />
     </list>
@@ -63,7 +65,7 @@
       <workItem from="1591200049941" duration="2490000" />
       <workItem from="1591237910160" duration="889000" />
       <workItem from="1591519148147" duration="80000" />
-      <workItem from="1591519337940" duration="3111000" />
+      <workItem from="1591519337940" duration="6875000" />
     </task>
     <servers />
   </component>
@@ -71,13 +73,21 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="498" y="130" width="505" height="541" key="#Web_Browsers" timestamp="1591526496074">
+      <screen x="60" y="27" width="1306" height="741" />
+    </state>
+    <state x="498" y="130" width="505" height="541" key="#Web_Browsers/60.27.1306.741@60.27.1306.741" timestamp="1591526496074" />
+    <state x="171" y="35" width="1169" height="725" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591526497446">
+      <screen x="60" y="27" width="1306" height="741" />
+    </state>
+    <state x="171" y="35" width="1169" height="725" key="#com.intellij.execution.impl.EditConfigurationsDialog/60.27.1306.741@60.27.1306.741" timestamp="1591526497446" />
     <state x="463" y="154" key="FileChooserDialogImpl" timestamp="1591519210899">
       <screen x="60" y="27" width="1306" height="741" />
     </state>
     <state x="463" y="154" key="FileChooserDialogImpl/60.27.1306.741@60.27.1306.741" timestamp="1591519210899" />
-    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup" timestamp="1591523020905">
+    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup" timestamp="1591525876351">
       <screen x="60" y="27" width="1306" height="741" />
     </state>
-    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup/60.27.1306.741@60.27.1306.741" timestamp="1591523020905" />
+    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup/60.27.1306.741@60.27.1306.741" timestamp="1591525876351" />
   </component>
 </project>

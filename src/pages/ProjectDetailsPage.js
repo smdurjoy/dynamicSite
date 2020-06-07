@@ -8,7 +8,8 @@ class ProjectDetailsPage extends Component {
     constructor({match}) {
         super();
         this.state = {
-            projectId: match.params.projectId
+            projectId: match.params.projectId,
+            projectName: match.params.projectName
         }
     }
     componentDidMount() {
@@ -18,7 +19,7 @@ class ProjectDetailsPage extends Component {
         return (
             <Fragment>
                 <TopNavigation title="Project Details"/>
-                <PageTop pagetitle="Project Name"/>
+                <PageTop pagetitle={this.state.projectName}/>
                 <ProjectDetails projectId={this.state.projectId}/>
                 <Footer/>
             </Fragment>

@@ -3,6 +3,7 @@ import {Button, Col, Container, Row} from "react-bootstrap";
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
 import ReactHtmlParser from 'react-html-parser';
+import {Link} from "react-router-dom";
 
 class ProjectDetails extends Component {
     constructor(props) {
@@ -37,9 +38,7 @@ class ProjectDetails extends Component {
                 <Container className="mt-5">
                         <Row>
                             <Col lg={6} md={6} sm={12}>
-
-                            <img src={this.state.image_two}/>
-
+                                <img src={this.state.image_two}/>
                             </Col>
 
                             <Col lg={6} md={6} sm={12}>
@@ -48,15 +47,10 @@ class ProjectDetails extends Component {
                                 <ul>
                                     { ReactHtmlParser(this.state.project_features) }
                                 </ul>
-                                <Button variant="primary">More Info</Button>
+                                <Button variant="primary"><Link className="link-style" to={this.state.live_preview}>Live Preview</Link></Button>
                             </Col>
-
-
                         </Row>
                 </Container>
-
-
-                
             </Fragment>
         );
     }
