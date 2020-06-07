@@ -5,6 +5,12 @@ import ProjectDetails from "../components/ProjectDetails/ProjectDetails";
 import Footer from "../components/Footer/Footer";
 
 class ProjectDetailsPage extends Component {
+    constructor({match}) {
+        super();
+        this.state = {
+            projectId: match.params.projectId
+        }
+    }
     componentDidMount() {
         window.scrollTo(0, 0)
     }
@@ -13,7 +19,7 @@ class ProjectDetailsPage extends Component {
             <Fragment>
                 <TopNavigation title="Project Details"/>
                 <PageTop pagetitle="Project Name"/>
-                <ProjectDetails/>
+                <ProjectDetails projectId={this.state.projectId}/>
                 <Footer/>
             </Fragment>
         );

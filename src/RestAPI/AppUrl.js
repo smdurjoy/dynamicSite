@@ -17,5 +17,5 @@ class AppUrl {
     static ChartData=this.BaseUrl+'/chartData';
     static Information=this.BaseUrl+'/informations';
 }
-export default AppUrl
+export default AppUrl;
 
