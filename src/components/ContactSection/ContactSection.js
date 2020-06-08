@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
+import Loader from "../Loader/Loader";
 
 class ContactSection extends Component {
     constructor() {
@@ -12,6 +13,8 @@ class ContactSection extends Component {
             address: '',
             email: '',
             phone: '',
+            loaderClass: "",
+            mainDivClass: "d-none"
         }
     }
 
@@ -21,6 +24,8 @@ class ContactSection extends Component {
                 address:result[0]['address'],
                 email: result[0]['email'],
                 phone: result[0]['phone'],
+                loaderClass:"d-none",
+                mainDivClass:""
             })
         })
     }
@@ -71,7 +76,12 @@ class ContactSection extends Component {
 
                         </Col>
 
-                        <Col lg={6} md={6} sm={12}>
+                        <Col lg={6} md={6} sm={12} className={this.state.loaderClass}>
+                            <h1 className="serviceName">Discuss Now</h1>
+                            <Loader />
+                        </Col>
+
+                        <Col lg={6} md={6} sm={12} className={this.state.mainDivClass}>
                             <h1 className="serviceName">Discuss Now</h1>
                             <p className="serviceDescription" >{this.state.address}</p>
                             <p className="serviceDescription" > <FontAwesomeIcon  icon={faEnvelope} /> {this.state.email}</p>

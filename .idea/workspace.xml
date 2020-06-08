@@ -20,17 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6cfe2bd-a681-4887-bbe9-76f4686f6512" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/asset/image/loader.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loader/Loader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AboutDescription/AboutDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutDescription/AboutDescription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllCourses/AllCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllCourses/AllCourses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllProjects/AllProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllProjects/AllProjects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Analysis/Analysis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Analysis/Analysis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientReview/ClientReview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientReview/ClientReview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ContactSection/ContactSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactSection/ContactSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseDetails/CourseDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseDetails/CourseDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/Courses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RecentProjects/RecentProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RecentProjects/RecentProjects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RefundDescription/RefundSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RefundDescription/RefundSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Services/Services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TermsDescription/TermsDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TermsDescription/TermsDescription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopBanner/TopBanner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopBanner/TopBanner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Video/Video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Video/Video.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +95,7 @@
       <workItem from="1591237910160" duration="889000" />
       <workItem from="1591519148147" duration="80000" />
       <workItem from="1591519337940" duration="8314000" />
-      <workItem from="1591626227258" duration="2418000" />
+      <workItem from="1591626227258" duration="4399000" />
     </task>
     <servers />
   </component>
@@ -128,9 +126,9 @@
       <screen x="60" y="27" width="1306" height="741" />
     </state>
     <state x="463" y="154" key="FileChooserDialogImpl/60.27.1306.741@60.27.1306.741" timestamp="1591519210899" />
-    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup" timestamp="1591632449118">
+    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup" timestamp="1591634971793">
       <screen x="60" y="27" width="1306" height="741" />
     </state>
-    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup/60.27.1306.741@60.27.1306.741" timestamp="1591632449118" />
+    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup/60.27.1306.741@60.27.1306.741" timestamp="1591634971793" />
   </component>
 </project>

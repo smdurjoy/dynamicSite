@@ -6,6 +6,7 @@ import {faFacebook,faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {Link, NavLink} from "react-router-dom";
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
+import Loader from "../Loader/Loader";
 
 class Footer extends Component {
     constructor() {
@@ -16,7 +17,9 @@ class Footer extends Component {
             phone: '',
             facebook: '',
             youtube: '',
-            footerCredit: ''
+            footerCredit: '',
+            loaderClass: "text-center",
+            mainDivClass: "d-none"
         }
     }
 
@@ -28,7 +31,9 @@ class Footer extends Component {
                 phone: result[0]['phone'],
                 facebook: result[0]['facebook'],
                 youtube: result[0]['youtube'],
-                footerCredit: result[0]['footer_credit']
+                footerCredit: result[0]['footer_credit'],
+                loaderClass:"d-none",
+                mainDivClass:"p-5 text-justify"
             })
         })
     }
@@ -43,7 +48,11 @@ class Footer extends Component {
                             <a className="socialLink" target={null} href={this.state.facebook}><FontAwesomeIcon  icon={faFacebook} /> Facebook</a><br/>
                             <a className="socialLink" href={this.state.youtube}><FontAwesomeIcon  icon={faYoutube} /> YouTube</a>
                         </Col>
-                        <Col lg={3} md={6} sm={12} className="p-5 text-justify">
+                        <Col lg={3} md={6} sm={12} className={this.state.loaderClass}>
+                            <h1 className="serviceName">Address</h1>
+                            <Loader />
+                        </Col>
+                        <Col lg={3} md={6} sm={12} className={this.state.mainDivClass}>
                             <h1 className="serviceName">Address</h1>
                             <p className="serviceDescription"> {this.state.address} </p>
                             <p className="serviceDescription" > <FontAwesomeIcon  icon={faEnvelope} /> {this.state.email} </p>
