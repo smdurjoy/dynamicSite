@@ -11,7 +11,7 @@ class ContactSection extends Component {
         this.state = {
             address: '',
             email: '',
-            phone: ''
+            phone: '',
         }
     }
 
@@ -20,7 +20,7 @@ class ContactSection extends Component {
             this.setState({
                 address:result[0]['address'],
                 email: result[0]['email'],
-                phone: result[0]['phone']
+                phone: result[0]['phone'],
             })
         })
     }
@@ -70,7 +70,6 @@ class ContactSection extends Component {
                             </Form>
 
                         </Col>
-
 
                         <Col lg={6} md={6} sm={12}>
                             <h1 className="serviceName">Discuss Now</h1>

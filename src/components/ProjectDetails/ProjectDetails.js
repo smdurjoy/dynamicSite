@@ -4,6 +4,7 @@ import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
 import ReactHtmlParser from 'react-html-parser';
 import {Link} from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 class ProjectDetails extends Component {
     constructor(props) {
@@ -14,7 +15,8 @@ class ProjectDetails extends Component {
             project_features: "",
             live_preview: "",
             image_two: "",
-            project_name: ""
+            project_name: "",
+            loading: true
         }
     }
 
@@ -25,7 +27,8 @@ class ProjectDetails extends Component {
                 project_features: result[0]['project_features'],
                 live_preview: result[0]['live_preview'],
                 image_two: result[0]['image_two'],
-                project_name: result[0]['project_name']
+                project_name: result[0]['project_name'],
+                loading: false
             })
         }).catch(error => {
 
@@ -33,9 +36,12 @@ class ProjectDetails extends Component {
     }
 
     render() {
-        return (
-            <Fragment>
-                <Container className="mt-5">
+        if(this.state.loading == true) {
+            return <Loader />
+        } else {
+            return (
+                <Fragment>
+                    <Container className="mt-5">
                         <Row>
                             <Col lg={6} md={6} sm={12}>
                                 <img src={this.state.image_two}/>
@@ -50,9 +56,10 @@ class ProjectDetails extends Component {
                                 <Button variant="primary"><Link className="link-style" to={this.state.live_preview}>Live Preview</Link></Button>
                             </Col>
                         </Row>
-                </Container>
-            </Fragment>
-        );
+                    </Container>
+                </Fragment>
+            );
+        }
     }
 }
 

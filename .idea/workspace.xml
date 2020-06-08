@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d6cfe2bd-a681-4887-bbe9-76f4686f6512" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/asset/image/loader.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Loader/Loader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutDescription/AboutDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutDescription/AboutDescription.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllCourses/AllCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllCourses/AllCourses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllProjects/AllProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllProjects/AllProjects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Analysis/Analysis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Analysis/Analysis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientReview/ClientReview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientReview/ClientReview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContactSection/ContactSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactSection/ContactSection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseDetails/CourseDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseDetails/CourseDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/Courses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProjectDetails/ProjectDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectDetails/ProjectDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RecentProjects/RecentProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RecentProjects/RecentProjects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CourseDetailsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CourseDetailsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProjectDetailsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProjectDetailsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/AppRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/AppRoute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +39,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,7 +60,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/asset/image" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -42,6 +68,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/asset/image" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -65,12 +96,24 @@
       <workItem from="1591200049941" duration="2490000" />
       <workItem from="1591237910160" duration="889000" />
       <workItem from="1591519148147" duration="80000" />
-      <workItem from="1591519337940" duration="6875000" />
+      <workItem from="1591519337940" duration="8314000" />
+      <workItem from="1591626227258" duration="2418000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="498" y="130" width="505" height="541" key="#Web_Browsers" timestamp="1591526496074">
@@ -85,9 +128,9 @@
       <screen x="60" y="27" width="1306" height="741" />
     </state>
     <state x="463" y="154" key="FileChooserDialogImpl/60.27.1306.741@60.27.1306.741" timestamp="1591519210899" />
-    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup" timestamp="1591525876351">
+    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup" timestamp="1591632449118">
       <screen x="60" y="27" width="1306" height="741" />
     </state>
-    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup/60.27.1306.741@60.27.1306.741" timestamp="1591525876351" />
+    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup/60.27.1306.741@60.27.1306.741" timestamp="1591632449118" />
   </component>
 </project>
