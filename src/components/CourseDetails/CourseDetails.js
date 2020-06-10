@@ -20,7 +20,7 @@ class CourseDetails extends Component {
         let skill_all = "";
         let video_url = "";
         let course_link = "";
-        let loading = true
+        let loading = true;
 
         let courseDetailsArray = this.props.courseData;
         if(courseDetailsArray.length == 1) {

@@ -27,7 +27,7 @@ class CourseDetailsPage extends Component {
         return (
             <Fragment>
                 <TopNavigation title="Course Details"/>
-                    <CourseDetails courseData={this.state.courseData}/>
+                <CourseDetails courseData={this.state.courseData}/>
                 <Footer/>
             </Fragment>
         );

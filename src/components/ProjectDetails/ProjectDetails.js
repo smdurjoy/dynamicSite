@@ -5,6 +5,7 @@ import AppUrl from "../../RestAPI/AppUrl";
 import ReactHtmlParser from 'react-html-parser';
 import {Link} from "react-router-dom";
 import Loader from "../Loader/Loader";
+import WentWrong from "../WentWrong/WentWrong";
 
 class ProjectDetails extends Component {
     constructor(props) {
@@ -16,7 +17,8 @@ class ProjectDetails extends Component {
             live_preview: "",
             image_two: "",
             project_name: "",
-            loading: true
+            loading: true,
+            error: false
         }
     }
 
@@ -31,34 +33,38 @@ class ProjectDetails extends Component {
                 loading: false
             })
         }).catch(error => {
-
+            this.setState({error:true, loading:false})
         })
     }
 
     render() {
-        if(this.state.loading == true) {
-            return <Loader />
+        if(this.state.error == true) {
+            return <WentWrong />
         } else {
-            return (
-                <Fragment>
-                    <Container className="mt-5">
-                        <Row>
-                            <Col lg={6} md={6} sm={12}>
-                                <img src={this.state.image_two}/>
-                            </Col>
+            if(this.state.loading == true) {
+                return <Loader />
+            } else {
+                return (
+                    <Fragment>
+                        <Container className="mt-5">
+                            <Row>
+                                <Col lg={6} md={6} sm={12}>
+                                    <img src={this.state.image_two}/>
+                                </Col>
 
-                            <Col lg={6} md={6} sm={12}>
-                                <h2 className="serviceName">{this.state.project_name}</h2>
-                                <p className="serviceDescription">{this.state.short_description}</p>
-                                <ul>
-                                    { ReactHtmlParser(this.state.project_features) }
-                                </ul>
-                                <Button variant="primary"><Link className="link-style" to={this.state.live_preview}>Live Preview</Link></Button>
-                            </Col>
-                        </Row>
-                    </Container>
-                </Fragment>
-            );
+                                <Col lg={6} md={6} sm={12}>
+                                    <h2 className="serviceName">{this.state.project_name}</h2>
+                                    <p className="serviceDescription">{this.state.short_description}</p>
+                                    <ul>
+                                        { ReactHtmlParser(this.state.project_features) }
+                                    </ul>
+                                    <Button variant="primary"><Link className="link-style" to={this.state.live_preview}>Live Preview</Link></Button>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Fragment>
+                );
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ class ContactSection extends Component {
             email: '',
             phone: '',
             loaderClass: "",
-            mainDivClass: "d-none"
+            mainDivClass: "d-none",
         }
     }
 
@@ -27,6 +27,8 @@ class ContactSection extends Component {
                 loaderClass:"d-none",
                 mainDivClass:""
             })
+        }).catch(error => {
+
         })
     }
 

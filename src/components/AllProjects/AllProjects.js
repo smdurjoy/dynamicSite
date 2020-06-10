@@ -4,53 +4,63 @@ import {Link} from "react-router-dom";
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
 import Loader from "../Loader/Loader";
+import WentWrong from "../WentWrong/WentWrong";
 
 class AllProjects extends Component {
     constructor() {
         super();
         this.state = {
             myData: [],
-            loading: true
+            loading: true,
+            error: false
         }
     }
 
     componentDidMount() {
         RestClient.GetRequest(AppUrl.ProjectAll).then(result => {
-            this.setState({myData:result, loading: false})
+            if(result==null){
+                this.setState({error:true, loading:false})
+            } else {
+                this.setState({myData:result, loading: false})
+            }
         }).catch(error => {
-
+            this.setState({error:true, loading:false})
         })
     }
 
     render() {
-        if(this.state.loading == true) {
-            return <Loader />
+        if(this.state.error == true) {
+            return <WentWrong />
         } else {
-            const myList = this.state.myData;
-            const myView = myList.map(data => {
-                return  <Col sm={12} md={6} lg={4} className="p-2">
-                    <Card className="projectCard">
-                        <Card.Img variant="top" src={data.image_one}/>
-                        <Card.Body>
-                            <Card.Title className="projectCardTitle">{data.project_name}</Card.Title>
-                            <Card.Text className="projectCardDes">
-                                {data.short_description}
-                            </Card.Text>
-                            <Button variant="primary"><Link className="link-style" to={"/ProjectDetails/"+data.id+"/"+data.project_name}>Details</Link></Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            });
+            if(this.state.loading == true) {
+                return <Loader />
+            } else {
+                const myList = this.state.myData;
+                const myView = myList.map(data => {
+                    return  <Col sm={12} md={6} lg={4} className="p-2">
+                        <Card className="projectCard">
+                            <Card.Img variant="top" src={data.image_one}/>
+                            <Card.Body>
+                                <Card.Title className="projectCardTitle">{data.project_name}</Card.Title>
+                                <Card.Text className="projectCardDes">
+                                    {data.short_description}
+                                </Card.Text>
+                                <Button variant="primary"><Link className="link-style" to={"/ProjectDetails/"+data.id+"/"+data.project_name}>Details</Link></Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                });
 
-            return (
-                <Fragment>
-                    <Container className="text-center mt-5">
-                        <Row>
-                            {myView}
-                        </Row>
-                    </Container>
-                </Fragment>
-            );
+                return (
+                    <Fragment>
+                        <Container className="text-center mt-5">
+                            <Row>
+                                {myView}
+                            </Row>
+                        </Container>
+                    </Fragment>
+                );
+            }
         }
     }
 }

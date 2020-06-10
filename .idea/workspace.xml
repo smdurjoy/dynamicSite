@@ -20,15 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6cfe2bd-a681-4887-bbe9-76f4686f6512" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/asset/image/error.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/WentWrong/WentWrong.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutDescription/AboutDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutDescription/AboutDescription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllCourses/AllCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllCourses/AllCourses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllProjects/AllProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllProjects/AllProjects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Analysis/Analysis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Analysis/Analysis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientReview/ClientReview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientReview/ClientReview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ContactSection/ContactSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactSection/ContactSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RecentProjects/RecentProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RecentProjects/RecentProjects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RefundDescription/RefundSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RefundDescription/RefundSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Services/Services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TermsDescription/TermsDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TermsDescription/TermsDescription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopBanner/TopBanner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopBanner/TopBanner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Video/Video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Video/Video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseDetails/CourseDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseDetails/CourseDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/Courses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PrivacyDescription/PrivacyDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PrivacyDescription/PrivacyDescription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CourseDetailsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CourseDetailsPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +99,10 @@
       <workItem from="1591237910160" duration="889000" />
       <workItem from="1591519148147" duration="80000" />
       <workItem from="1591519337940" duration="8314000" />
-      <workItem from="1591626227258" duration="4399000" />
+      <workItem from="1591626227258" duration="4596000" />
+      <workItem from="1591703506199" duration="8175000" />
+      <workItem from="1591778956714" duration="505000" />
+      <workItem from="1591808325683" duration="3615000" />
     </task>
     <servers />
   </component>
@@ -112,6 +119,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="498" y="130" width="505" height="541" key="#Web_Browsers" timestamp="1591526496074">
@@ -122,13 +130,17 @@
       <screen x="60" y="27" width="1306" height="741" />
     </state>
     <state x="171" y="35" width="1169" height="725" key="#com.intellij.execution.impl.EditConfigurationsDialog/60.27.1306.741@60.27.1306.741" timestamp="1591526497446" />
-    <state x="463" y="154" key="FileChooserDialogImpl" timestamp="1591519210899">
+    <state x="463" y="154" key="FileChooserDialogImpl" timestamp="1591779459008">
       <screen x="60" y="27" width="1306" height="741" />
     </state>
-    <state x="463" y="154" key="FileChooserDialogImpl/60.27.1306.741@60.27.1306.741" timestamp="1591519210899" />
-    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup" timestamp="1591634971793">
+    <state x="463" y="154" key="FileChooserDialogImpl/60.27.1306.741@60.27.1306.741" timestamp="1591779459008" />
+    <state x="377" y="171" key="run.anything.popup" timestamp="1591809363673">
       <screen x="60" y="27" width="1306" height="741" />
     </state>
-    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup/60.27.1306.741@60.27.1306.741" timestamp="1591634971793" />
+    <state x="377" y="171" key="run.anything.popup/60.27.1306.741@60.27.1306.741" timestamp="1591809363673" />
+    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup" timestamp="1591811271915">
+      <screen x="60" y="27" width="1306" height="741" />
+    </state>
+    <state x="376" y="82" width="672" height="685" key="search.everywhere.popup/60.27.1306.741@60.27.1306.741" timestamp="1591811271915" />
   </component>
 </project>
