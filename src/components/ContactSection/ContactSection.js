@@ -21,17 +21,31 @@ class ContactSection extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.Footer).then(result => {
+        const sessionFooterData = sessionStorage.getItem('FooterData');
+        if(sessionFooterData == null) {
+            RestClient.GetRequest(AppUrl.Footer).then(result => {
+                const jsonData = (result)[0];
+                this.setState({
+                    address:result[0]['address'],
+                    email: result[0]['email'],
+                    phone: result[0]['phone'],
+                    loaderClass:"d-none",
+                    mainDivClass:""
+                })
+                sessionStorage.setItem('FooterData', JSON.stringify(jsonData));
+            }).catch(error => {
+                this.setState({error:true, loading:false})
+            })
+        } else {
+            const footerDataJSON = JSON.parse(sessionFooterData);
             this.setState({
-                address:result[0]['address'],
-                email: result[0]['email'],
-                phone: result[0]['phone'],
+                address:footerDataJSON['address'],
+                email: footerDataJSON['email'],
+                phone: footerDataJSON['phone'],
                 loaderClass:"d-none",
                 mainDivClass:""
             })
-        }).catch(error => {
-            this.setState({error:true, loading:false})
-        })
+        }
     }
 
     sendContact(){

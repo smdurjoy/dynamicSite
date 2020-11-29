@@ -17,11 +17,17 @@ class RefundSection extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.Information).then(result => {
-            this.setState({refundDes: result[0]['refund'], loading:false})
-        }).catch(err => {
-            this.setState({error:true, loading:false})
-        })
+        const sessionRefundData = sessionStorage.getItem('refundData');
+        if(sessionRefundData == null) {
+            RestClient.GetRequest(AppUrl.Information).then(result => {
+                this.setState({refundDes: result[0]['refund'], loading:false});
+                sessionStorage.setItem('refundData', result[0]['refund']);
+            }).catch(err => {
+                this.setState({error:true, loading:false})
+            })
+        }else {
+            this.setState({refundDes: sessionRefundData, loading:false});
+        }
     }
 
     render() {

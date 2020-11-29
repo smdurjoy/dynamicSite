@@ -17,15 +17,22 @@ class AllProjects extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.ProjectAll).then(result => {
-            if(result==null){
+        const allProjectData = sessionStorage.getItem('allProjects');
+        if(allProjectData == null) {
+            RestClient.GetRequest(AppUrl.ProjectAll).then(result => {
+                if(result==null){
+                    this.setState({error:true, loading:false})
+                } else {
+                    this.setState({myData:result, loading: false})
+                    sessionStorage.setItem('allProjects', JSON.stringify(result));
+                }
+            }).catch(error => {
                 this.setState({error:true, loading:false})
-            } else {
-                this.setState({myData:result, loading: false})
-            }
-        }).catch(error => {
-            this.setState({error:true, loading:false})
-        })
+            })
+        } else {
+            const allProjectJSON = JSON.parse(allProjectData);
+            this.setState({myData:allProjectJSON, loading:false})
+        }
     }
 
     render() {

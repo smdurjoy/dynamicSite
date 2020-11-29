@@ -17,16 +17,34 @@ class TopBanner extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.HomeTitles).then(result => {
-            if(result == null) {
-                this.setState({loaderClass: "d-none", mainDivClass:"d-none", wentWrong: "text-center"})
-            } else {
-                this.setState({title:result[0]["home_title"], subtitle:result[0]['home_subtitle'], loaderClass:"d-none", mainDivClass:"text-center"})
-            }
+        const sessionTopBannerData = sessionStorage.getItem('TopBannerData');
+        if(sessionTopBannerData == null) {
+            RestClient.GetRequest(AppUrl.HomeTitles).then(result => {
+                const jsonData = (result)[0];
+                if(result == null) {
+                    this.setState({loaderClass: "d-none", mainDivClass:"d-none", wentWrong: "text-center"})
+                } else {
+                    this.setState({
+                        title:jsonData["home_title"], 
+                        subtitle:jsonData['home_subtitle'], 
+                        loaderClass:"d-none", 
+                        mainDivClass:"text-center"
+                    })
+                    sessionStorage.setItem('TopBannerData', JSON.stringify(jsonData));
+                }
 
-        }).catch(error => {
-            this.setState({loaderClass: "d-none", mainDivClass:"d-none", wentWrong: "text-center"})
-        })
+            }).catch(error => {
+                this.setState({loaderClass: "d-none", mainDivClass:"d-none", wentWrong: "text-center"})
+            })
+        } else {
+            const topBannerJSON = JSON.parse(sessionTopBannerData);
+            this.setState({
+                title:topBannerJSON["home_title"], 
+                subtitle:topBannerJSON['home_subtitle'], 
+                loaderClass:"d-none", 
+                mainDivClass:"text-center"
+            })
+        }
     }
 
     render() {

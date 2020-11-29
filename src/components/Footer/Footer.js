@@ -24,18 +24,35 @@ class Footer extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.Footer).then(result => {
+        const sessionFooterData = sessionStorage.getItem('FooterSectionData');
+        if(sessionFooterData == null) {
+            RestClient.GetRequest(AppUrl.Footer).then(result => {
+                const jsonData = (result)[0];
+                this.setState({
+                    address:jsonData['address'],
+                    email: jsonData['email'],
+                    phone: jsonData['phone'],
+                    facebook: jsonData['facebook'],
+                    youtube: jsonData['youtube'],
+                    footerCredit: jsonData['footer_credit'],
+                    loaderClass:"d-none",
+                    mainDivClass:"p-5 text-justify"
+                })
+                sessionStorage.setItem('FooterSectionData', JSON.stringify(jsonData));
+            })
+        } else {
+            const footerJsonData = JSON.parse(sessionFooterData);
             this.setState({
-                address:result[0]['address'],
-                email: result[0]['email'],
-                phone: result[0]['phone'],
-                facebook: result[0]['facebook'],
-                youtube: result[0]['youtube'],
-                footerCredit: result[0]['footer_credit'],
+                address:footerJsonData['address'],
+                email: footerJsonData['email'],
+                phone: footerJsonData['phone'],
+                facebook: footerJsonData['facebook'],
+                youtube: footerJsonData['youtube'],
+                footerCredit: footerJsonData['footer_credit'],
                 loaderClass:"d-none",
                 mainDivClass:"p-5 text-justify"
             })
-        })
+        }
     }
 
     render() {

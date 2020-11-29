@@ -17,15 +17,22 @@ class RecentProjects extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.ProjectHome).then(result => {
-            if(result == null) {
+        const homeProjectData = sessionStorage.getItem('homeProject');
+        if(homeProjectData == null) {
+            RestClient.GetRequest(AppUrl.ProjectHome).then(result => {
+                if(result == null) {
+                    this.setState({error:true, loading:false})
+                } else {
+                    this.setState({myData:result, loading:false})
+                    sessionStorage.setItem('homeProject', JSON.stringify(result));
+                }
+            }).catch(error => {
                 this.setState({error:true, loading:false})
-            } else {
-                this.setState({myData:result, loading:false})
-            }
-        }).catch(error => {
-            this.setState({error:true, loading:false})
-        })
+            })
+        } else {
+            const homeProjectJSON = JSON.parse(homeProjectData);
+            this.setState({myData:homeProjectJSON, loading:false})
+        }
     }
 
     render() {

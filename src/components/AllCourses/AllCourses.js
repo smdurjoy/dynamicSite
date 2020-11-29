@@ -17,14 +17,21 @@ class AllCourses extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.CourseAll).then(result => {
-            if(result == null) {
-                this.setState({error:true, loading:false })
-            }
-            this.setState({courses:result, loading: false})
-        }).catch(error => {
-            this.setState({error:true, loading:false})
-        })
+        const allCourseData = sessionStorage.getItem('allCourses');
+        if(allCourseData == null) {
+            RestClient.GetRequest(AppUrl.CourseAll).then(result => {
+                if(result == null) {
+                    this.setState({error:true, loading:false })
+                }
+                this.setState({courses:result, loading: false})
+                sessionStorage.setItem('allCourses', JSON.stringify(result));
+            }).catch(error => {
+                this.setState({error:true, loading:false})
+            })
+        } else {
+            const allCourseJSON = JSON.parse(allCourseData);
+            this.setState({courses:allCourseJSON, loading:false})
+        }
     }
 
     render() {

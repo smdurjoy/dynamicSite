@@ -1,5 +1,5 @@
 class AppUrl {
-    static BaseUrl='https://reactapidurjoy.000webhostapp.com/';
+    static BaseUrl='https://api.smdurjoy.com';
     static HomeTitles=this.BaseUrl+'/homeTitles';
     static TechDesc=this.BaseUrl+'/techDescription';
     static TotalProjectClient=this.BaseUrl+'/projectClient';
@@ -17,5 +17,6 @@ class AppUrl {
     static ChartData=this.BaseUrl+'/chartData';
     static Information=this.BaseUrl+'/informations';
 }
+
 export default AppUrl;
 

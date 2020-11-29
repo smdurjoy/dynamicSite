@@ -25,15 +25,26 @@ class Video extends Component {
     modalOpen=()=>this.setState({show:true})
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.VideoHome).then(result => {
+        const homeVideoData = sessionStorage.getItem('homeVideo');
+        if(homeVideoData == null) {
+            RestClient.GetRequest(AppUrl.VideoHome).then(result => {
+                this.setState({
+                    videoDescription:result[0]['video_description'],
+                    videoUrl:result[0]['video_url'],
+                    loading: false
+                })
+                sessionStorage.setItem('homeVideo', JSON.stringify(result));
+            }).catch(error => {
+                this.setState({error:true, loading:false})
+            })
+        } else {
+            const homeVideoJSON = JSON.parse(homeVideoData);
             this.setState({
-                videoDescription:result[0]['video_description'],
-                videoUrl:result[0]['video_url'],
+                videoDescription:homeVideoJSON[0]['video_description'],
+                videoUrl:homeVideoJSON[0]['video_url'],
                 loading: false
             })
-        }).catch(error => {
-            this.setState({error:true, loading:false})
-        })
+        }
     }
 
     render() {

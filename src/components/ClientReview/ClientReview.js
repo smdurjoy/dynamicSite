@@ -19,15 +19,22 @@ class ClientReview extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.ClientReview).then(result => {
-            if(result == null) {
+        const homeClientData = sessionStorage.getItem('homeClient');
+        if(homeClientData == null) {
+            RestClient.GetRequest(AppUrl.ClientReview).then(result => {
+                if(result == null) {
+                    this.setState({error:true, loading:false})
+                } else {
+                    this.setState({myData:result, loading:false})
+                    sessionStorage.setItem('homeClient', JSON.stringify(result));
+                }
+            }).catch(error => {
                 this.setState({error:true, loading:false})
-            } else {
-                this.setState({myData:result, loading:false})
-            }
-        }).catch(error => {
-            this.setState({error:true, loading:false})
-        })
+            })
+        } else {
+            const homeClientJSON = JSON.parse(homeClientData);
+            this.setState({myData:homeClientJSON, loading:false})
+        }
     }
 
     render() {

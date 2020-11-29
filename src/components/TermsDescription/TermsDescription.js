@@ -17,11 +17,17 @@ class TermsDescription extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.Information).then(result => {
-            this.setState({termsDes: result[0]['terms'], loading:false})
-        }).catch(err => {
-            this.setState({error:true, loading:false})
-        })
+        const sessionTermsData = sessionStorage.getItem('termsData');
+        if(sessionTermsData == null) {
+            RestClient.GetRequest(AppUrl.Information).then(result => {
+                this.setState({termsDes: result[0]['terms'], loading:false})
+                sessionStorage.setItem('termsData', result[0]['terms']);
+            }).catch(err => {
+                this.setState({error:true, loading:false})
+            })
+        }else {
+            this.setState({termsDes: sessionTermsData, loading:false})
+        }
     }
 
     render() {

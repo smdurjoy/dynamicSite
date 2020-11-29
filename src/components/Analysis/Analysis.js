@@ -20,17 +20,32 @@ class Analysis extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.ChartData).then(result => {
-            this.setState({data:result, loading: false})
-        }).catch(error => {
-            this.setState({error:true, loading:false})
-        })
+        const sessionChartData = sessionStorage.getItem('chartData');
+        if(sessionChartData == null) {
+            RestClient.GetRequest(AppUrl.ChartData).then(result => {
+                this.setState({data:result, loading: false})
+                sessionStorage.setItem('chartData', JSON.stringify(result))
+            }).catch(error => {
+                this.setState({error:true, loading:false})
+            })
+        } else {
+            const chartDataJSON = JSON.parse(sessionChartData);
+            this.setState({data:chartDataJSON, loading: false})
+        }
 
-        RestClient.GetRequest(AppUrl.TechDesc).then(result => {
-            this.setState({techDescription:result[0]['tech_description'], loading: false})
-        }).catch(error => {
-            this.setState({error:true, loading:false})
-        })
+        const sessionTechDes = sessionStorage.getItem('techDes');
+        if(sessionTechDes == null) {
+            RestClient.GetRequest(AppUrl.TechDesc).then(result => {
+                const techDes = result[0]['tech_description'];
+                this.setState({techDescription: techDes, loading: false});
+                sessionStorage.setItem('techDes', techDes);
+            }).catch(error => {
+                this.setState({error:true, loading:false})
+            })
+        } else {
+            const techDes = sessionTechDes;
+            this.setState({techDescription: techDes, loading: false});
+        }
     }
 
     render() {

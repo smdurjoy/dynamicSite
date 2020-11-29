@@ -17,18 +17,25 @@ class AboutDescription extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.Information).then(result => {
-            this.setState({aboutDes: result[0]['about'], loading: false})
-        }).catch(error => {
-            this.setState({error:true, loading:false})
-        })
+        const sessionAboutData = sessionStorage.getItem('aboutData');
+        if(sessionAboutData == null) {
+            RestClient.GetRequest(AppUrl.Information).then(result => {
+                const aboutData = result[0]['about'];
+                this.setState({aboutDes: aboutData, loading: false})
+                sessionStorage.setItem('aboutData', aboutData);
+            }).catch(error => {
+                this.setState({error:true, loading:false})
+            })
+        }else {
+            this.setState({aboutDes: sessionAboutData, loading: false})
+        }
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if(this.state.loading == true) {
+            if(this.state.loading === true) {
                 return <Loader />
             } else {
                 return (

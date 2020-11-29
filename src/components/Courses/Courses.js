@@ -17,15 +17,22 @@ class Courses extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.CourseHome).then(result => {
-            if(result == null) {
+        const homeCourseData = sessionStorage.getItem('homeCourseData');
+        if(homeCourseData == null) {
+            RestClient.GetRequest(AppUrl.CourseHome).then(result => {
+                if(result == null) {
+                    this.setState({error:true, loading:false})
+                } else {
+                    this.setState({myData:result, loading:false})
+                    sessionStorage.setItem('homeCourseData', JSON.stringify(result))
+                }
+            }).catch(error => {
                 this.setState({error:true, loading:false})
-            } else {
-                this.setState({myData:result, loading:false})
-            }
-        }).catch(error => {
-            this.setState({error:true, loading:false})
-        })
+            })
+        } else {
+            const courseJSON = JSON.parse(homeCourseData);
+            this.setState({myData:courseJSON, loading:false})
+        }
     }
 
     render() {

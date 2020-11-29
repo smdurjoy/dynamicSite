@@ -17,11 +17,17 @@ class PrivacyDescription extends Component {
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppUrl.Information).then(result => {
-            this.setState({privacyDes: result[0]['privacy'], loading:false})
-        }).catch(err => {
-            this.setState({error:true, loading:false})
-        })
+        const sessionPrivacyData = sessionStorage.getItem('privacyData');
+        if(sessionPrivacyData == null) {
+            RestClient.GetRequest(AppUrl.Information).then(result => {
+                this.setState({privacyDes: result[0]['privacy'], loading:false})
+                sessionStorage.setItem('privacyData', result[0]['privacy']);
+            }).catch(err => {
+                this.setState({error:true, loading:false})
+            })
+        }else {
+            this.setState({privacyDes: sessionPrivacyData, loading:false})
+        }
     }
 
     render() {
