@@ -13,7 +13,7 @@ class ServicePage extends Component {
         return (
             <Fragment>
                 <TopNavigation title="Service"/>
-                <PageTop pagetitle="My Services"/>
+                <PageTop pagetitle="Our Services"/>
                 <Services/>
                 <ContactSection/>
                 <Footer/>

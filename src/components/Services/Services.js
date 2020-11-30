@@ -1,8 +1,6 @@
 import React, {Component,Fragment} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import graphicsLogo from '../../asset/image/graphics.svg'
 import webLogo from '../../asset/image/web.svg'
-import mobileLogo from '../../asset/image/mobile.svg'
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
 import Loader from "../Loader/Loader";
@@ -38,17 +36,17 @@ class Services extends Component {
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if(this.state.loading == true) {
+            if(this.state.loading === true) {
                 return <Loader />
             } else {
                 const myList = this.state.myData;
-                const myView = myList.map(data => {
-                    return  <Col lg={4} md={6} sm={12}>
+                const myView = myList.map((data, index) => {
+                    return  <Col lg={4} md={6} sm={12} key={index}>
                         <div className="serviceCard text-center">
-                            <img src={webLogo}/>
+                            <img src={webLogo} alt="services"/>
                             <h2 className="serviceName">{data.service_name}</h2>
                             <p className="serviceDescription">{data.service_description}</p>
                         </div>

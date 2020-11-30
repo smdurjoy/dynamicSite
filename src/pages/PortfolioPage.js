@@ -1,7 +1,6 @@
 import React, {Component,Fragment} from 'react';
 import TopNavigation from "../components/TopNavigation/TopNavigation";
 import PageTop from "../components/PageTop/PageTop";
-import AllCourses from "../components/AllCourses/AllCourses";
 import AllProjects from "../components/AllProjects/AllProjects";
 import Footer from "../components/Footer/Footer";
 

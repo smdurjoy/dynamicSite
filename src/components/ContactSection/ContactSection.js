@@ -49,21 +49,55 @@ class ContactSection extends Component {
     }
 
     sendContact(){
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let message = document.getElementById("message").value;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        const contactForm = document.getElementById("contactForm");
+        const submitContact = document.getElementById("submitContact");
+        const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const nameRegex = /^[a-zA-Z ]+$/;
 
-        let jsonObject={name:name, email:email, message:message};
-
-        RestClient.PostRequest(AppUrl.ContactSend,JSON.stringify(jsonObject)).then(result => {
-            alert(result);
-        }).catch(error => {
-            alert("Error");
-        })
+        if(name.length === 0) {
+            alert('Please Enter Your Name !')
+        }
+        else if(!(nameRegex.test(name))) {
+            alert('Please Enter a Valid Name !')
+        }
+        else if(email.length === 0) {
+            alert('Please Enter Your Email Address !')
+        }
+        else if(!(emailRegex.test(String(email).toLowerCase()))) {
+            alert('Please Enter a Valid Email Address !')
+        }
+        else if(message.length === 0) {
+            alert('Please Enter Your Message !')
+        }
+        else {
+            const jsonObject={name:name, email:email, message:message};
+            submitContact.innerText = 'Sending ...';
+            submitContact.disabled = true;
+    
+            RestClient.PostRequest(AppUrl.ContactSend,JSON.stringify(jsonObject)).then(result => {
+                if(result === 1) {
+                    submitContact.innerText = 'Send';
+                    submitContact.disabled = false;
+                    contactForm.reset();
+                    alert('Message Send Successfully')
+                } else {
+                    submitContact.innerText = 'Send';
+                    submitContact.disabled = false;
+                    alert('Something Went Wrong !')
+                }
+            }).catch(error => {
+                submitContact.innerText = 'Send';
+                submitContact.disabled = false;
+                alert("Error");
+            })
+        }
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
             return (
@@ -73,7 +107,7 @@ class ContactSection extends Component {
                             <Col lg={6} md={6} sm={12}>
                                 <h1 className="serviceName">Quick Connect</h1>
 
-                                <Form>
+                                <Form id="contactForm">
                                     <Form.Group>
                                         <Form.Label className="serviceDescription" >Name</Form.Label>
                                         <Form.Control id="name" type="text" />
@@ -90,8 +124,8 @@ class ContactSection extends Component {
                                     </Form.Group>
 
 
-                                    <Button variant="primary" onClick={this.sendContact}>
-                                        Submit
+                                    <Button variant="primary" id="submitContact" onClick={this.sendContact}>
+                                        Send
                                     </Button>
                                 </Form>
 

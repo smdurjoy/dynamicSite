@@ -48,10 +48,10 @@ class Video extends Component {
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if(this.state.loading == true) {
+            if(this.state.loading === true) {
                 return <Loader />
             } else {
                 return (
@@ -60,7 +60,7 @@ class Video extends Component {
                             <Row>
                                 <Col lg={12} md={12} sm={12} className="videoCard">
                                     <div>
-                                        <p className="videoTitle">How I Do</p>
+                                        <p className="videoTitle">How We Do</p>
                                         <p className="videoDes">{this.state.videoDescription}</p>
                                         <p><FontAwesomeIcon onClick={this.modalOpen} className="playBtn" icon={faPlayCircle} /></p>
                                     </div>

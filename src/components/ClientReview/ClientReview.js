@@ -38,10 +38,10 @@ class ClientReview extends Component {
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if(this.state.loading == true) {
+            if(this.state.loading === true) {
                 return <Loader />
             } else {
                 var settings = {
@@ -83,11 +83,11 @@ class ClientReview extends Component {
                 };
 
                 const myList = this.state.myData;
-                const myView = myList.map(data => {
-                    return  <div>
+                const myView = myList.map((data, index) => {
+                    return  <div key={index}>
                         <Row className="text-center justify-content-center">
                             <Col lg={6} md={6} sm={12}>
-                                <img className="circleImg" src={data.client_image}/>
+                                <img className="circleImg" src={data.client_image} alt="Yoo !"/>
                                 <h1 className="serviceName">{data.client_name}</h1>
                                 <p className="serviceDescription" >{data.client_comment}</p>
                             </Col>

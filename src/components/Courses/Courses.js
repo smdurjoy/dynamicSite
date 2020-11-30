@@ -36,23 +36,23 @@ class Courses extends Component {
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if(this.state.loading == true) {
+            if(this.state.loading === true) {
                 return <Loader />
             } else {
                 const myList = this.state.myData;
-                const myView = myList.map(data => {
-                    return <Col lg={6} md={12} sm={12} className="p-2">
+                const myView = myList.map((data, index) => {
+                    return <Col lg={6} md={12} sm={12} className="p-2" key={index}>
                         <Row>
                             <Col lg={6} md={6} sm={12}>
-                                <img className="courseImg" src={data.short_img}/>
+                                <img className="courseImg" src={data.short_img} alt="Yoo !"/>
                             </Col>
                             <Col lg={6} md={6} sm={12}>
                                 <h5 className="text-justify courseTitle">{data.short_title}</h5>
                                 <p className="text-justify courseDes">{data.short_des}</p>
-                                <Link  className="courseDetails float-left" to={"/CourseDetails/"+data.id}>Details</Link>
+                                <Link className="courseDetails float-left" to={"/CourseDetails/"+data.id}>Details</Link>
                             </Col>
                         </Row>
                     </Col>

@@ -9,10 +9,13 @@ import Courses from "../components/Courses/Courses";
 import Video from "../components/Video/Video";
 import ClientReview from "../components/ClientReview/ClientReview";
 import Footer from "../components/Footer/Footer";
+import RestClient from "../RestAPI/RestClient";
+import AppUrl from "../RestAPI/AppUrl";
 
 class HomePage extends Component {
     componentDidMount() {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
+        RestClient.GetRequest(AppUrl.visitorDetails)
     }
     render() {
         return (

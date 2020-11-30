@@ -1,9 +1,9 @@
 import React, {Component,Fragment} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEnvelope, faPhone, faPlayCircle} from "@fortawesome/free-solid-svg-icons";
+import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
 import {faFacebook,faYoutube} from "@fortawesome/free-brands-svg-icons";
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
 import Loader from "../Loader/Loader";
@@ -89,8 +89,10 @@ class Footer extends Component {
                     </Row>
                 </Container>
 
-                <Container fluid={true} className="text-center copyrightSection">
-                    <a className="copyrightLink" href="https://smdurjoy.netlify.app"> {this.state.footerCredit} </a>
+                <Container fluid={true} className="text-center copyrightSection text-white">
+                    <span className="credit">
+                    Developed by <a className="copyrightLink" href="https://smdurjoy.com"> smdurjoy </a>
+                    </span>
                 </Container>
 
             </Fragment>

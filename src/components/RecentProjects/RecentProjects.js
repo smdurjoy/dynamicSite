@@ -36,15 +36,15 @@ class RecentProjects extends Component {
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if(this.state.loading == true) {
+            if(this.state.loading === true) {
                 return <Loader />
             } else {
                 const myList = this.state.myData;
-                const myView = myList.map(data => {
-                    return   <Col lg={4} md={6} sm={12}>
+                const myView = myList.map((data, index) => {
+                    return   <Col lg={4} md={6} sm={12} key={index}>
                         <Card className="projectCard">
                             <Card.Img variant="top" src={data.image_one} className="cardImage"/>
                             <Card.Body>

@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Button, Col, Container, Modal, Row} from "react-bootstrap";
+import {Button, Col, Container, Row} from "react-bootstrap";
 import {BigPlayButton, Player} from "video-react";
 import ReactHtmlParser from "react-html-parser";
 import {Link} from "react-router-dom";
@@ -37,10 +37,10 @@ class CourseDetails extends Component {
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if(this.state.loading == true) {
+            if(this.state.loading === true) {
                 return <Loader />
             } else {
                 return (

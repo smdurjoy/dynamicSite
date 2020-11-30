@@ -31,10 +31,10 @@ class PrivacyDescription extends Component {
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if( this.state.loading == true ) {
+            if( this.state.loading === true ) {
                 return <Loader />
             } else {
                 return (
@@ -42,9 +42,9 @@ class PrivacyDescription extends Component {
                         <Container className="mt-5">
                             <Row>
                                 <Col sm={12} lg={12} md={12}>
-                                    <p className="serviceDescription">
+                                    <div className="serviceDescription">
                                         { ReactHtmlParser(this.state.privacyDes) }
-                                    </p>
+                                    </div>
                                 </Col>
                             </Row>
                         </Container>

@@ -1,5 +1,6 @@
 class AppUrl {
     static BaseUrl='https://api.smdurjoy.com';
+    static visitorDetails = this.BaseUrl+'/postVisitorDataAbc';
     static HomeTitles=this.BaseUrl+'/homeTitles';
     static TechDesc=this.BaseUrl+'/techDescription';
     static TotalProjectClient=this.BaseUrl+'/projectClient';

@@ -38,10 +38,10 @@ class ProjectDetails extends Component {
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if(this.state.loading == true) {
+            if(this.state.loading === true) {
                 return <Loader />
             } else {
                 return (
@@ -49,7 +49,7 @@ class ProjectDetails extends Component {
                         <Container className="mt-5">
                             <Row>
                                 <Col lg={6} md={6} sm={12}>
-                                    <img src={this.state.image_two}/>
+                                    <img src={this.state.image_two} alt="Yoo !"/>
                                 </Col>
 
                                 <Col lg={6} md={6} sm={12}>

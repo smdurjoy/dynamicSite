@@ -35,18 +35,18 @@ class AllCourses extends Component {
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if(this.state.loading == true) {
+            if(this.state.loading === true) {
                 return <Loader />
             } else {
                 const myData = this.state.courses;
-                const myView =  myData.map(data => {
-                    return  <Col lg={6} md={12} sm={12} className="p-2">
+                const myView =  myData.map((data, index) => {
+                    return  <Col lg={6} md={12} sm={12} className="p-2" key={index}>
                         <Row>
                             <Col lg={6} md={6} sm={12}>
-                                <img className="courseImg" src={data.short_img}/>
+                                <img className="courseImg" src={data.short_img} alt="Yoo !"/>
                             </Col>
                             <Col lg={6} md={6} sm={12}>
                                 <h5 className="text-justify courseTitle">{data.short_title}</h5>

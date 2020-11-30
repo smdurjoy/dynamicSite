@@ -1,5 +1,5 @@
 import React, {Component,Fragment} from 'react';
-import {Button, Card, Col, Container, Row} from "react-bootstrap";
+import {Card, Col, Container, Row} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 import CountUp from 'react-countup';
@@ -46,12 +46,12 @@ class Summary extends Component {
                                     <Card className="workCard">
                                         <Card.Body>
                                             <Card.Title className="cardTitle text-justify">How We Work</Card.Title>
-                                            <Card.Text>
+                                            <div>
                                                 <p className="cardSubTitle text-justify"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> Requirement Gathering </p>
                                                 <p className="cardSubTitle text-justify"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> System Analysis </p>
                                                 <p className="cardSubTitle text-justify"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> Coding Testing</p>
                                                 <p className="cardSubTitle text-justify"><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> Implementation</p>
-                                            </Card.Text>
+                                            </div>
                                         </Card.Body>
                                     </Card>
                                 </Col>

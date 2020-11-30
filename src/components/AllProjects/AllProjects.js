@@ -36,15 +36,15 @@ class AllProjects extends Component {
     }
 
     render() {
-        if(this.state.error == true) {
+        if(this.state.error === true) {
             return <WentWrong />
         } else {
-            if(this.state.loading == true) {
+            if(this.state.loading === true) {
                 return <Loader />
             } else {
                 const myList = this.state.myData;
-                const myView = myList.map(data => {
-                    return  <Col sm={12} md={6} lg={4} className="p-2">
+                const myView = myList.map((data, index) => {
+                    return  <Col sm={12} md={6} lg={4} className="p-2" key={index}>
                         <Card className="projectCard">
                             <Card.Img variant="top" src={data.image_one}/>
                             <Card.Body>
